@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<li
+		th:fragment="song(s)"		
+	>
+		[[${s.id}]] - [[${s.title}]]
+	</li>
+	
+	<ul
+		th:fragment="movies(ms)"
+	>
+		<li
+			th:each="movie : ${ms}"
+			th:object="${movie}"
+		>
+			[[*{id}]] - [[*{name}]]
+		</li>
+	</ul>
+</body>
+</html>
